@@ -1,6 +1,8 @@
 
 package objectClass;
 
+import java.awt.*;
+
 public abstract class ObjectClass {
     protected int x1;
     protected int y1;
@@ -10,7 +12,7 @@ public abstract class ObjectClass {
     public ObjectClass() {
     }
 
-    public abstract void draw();
+    public abstract void draw(Graphics g);
 
     public abstract void rename();
 
@@ -26,15 +28,19 @@ public abstract class ObjectClass {
         this.y2 = y2;
     }
 
-    protected void getX1() {
+    public int getX1() {
+        return x1;
     }
 
-    protected void getY1() {
+    public int getY1() {
+        return y1;
     }
 
-    protected void getX2() {
+    public int getX2() {
+        return x2;
     }
 
-    protected void getY2() {
+    public int getY2() {
+        return y2;
     }
 }

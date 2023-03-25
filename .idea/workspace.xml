@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb4d2959-a5ae-49de-b67e-c0d4e9c42573" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/UI/MyButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/MyCustomPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UI/MyFrame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objectClass/BasicClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objectClass/LineClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/objectClass/ObjectClass.java" afterDir="false" />
+    <list default="true" id="eb4d2959-a5ae-49de-b67e-c0d4e9c42573" name="Changes" comment="git add png">
+      <change afterPath="$PROJECT_DIR$/src/UI/CanvasPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/MyButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/MyButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/MyCustomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/MyCustomPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/MyFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectClass/AssociationLineClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/AssociationLineClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectClass/BasicClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/BasicClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectClass/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/Class.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectClass/CompositeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/CompositeClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectClass/LineClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/LineClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectClass/ObjectClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/ObjectClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/objectClass/UseCaseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/UseCaseClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,22 +50,37 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/96094/Desktop/code/Java/UML editor/src/objectClass",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/96094/Desktop/code/Java/UML editor/src/img&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\96094\Desktop\code\Java\UML editor\src\img" />
       <recent name="C:\Users\96094\Desktop\code\Java\UML editor\src\objectClass" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="UML editor" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -71,6 +91,21 @@
       <option name="presentableId" value="Default" />
       <updated>1678334924803</updated>
     </task>
+    <task id="LOCAL-00001" summary="git add some files">
+      <created>1679586038325</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679586038325</updated>
+    </task>
+    <task id="LOCAL-00002" summary="git add png">
+      <created>1679586248585</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1679586248585</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -83,6 +118,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="git add some files" />
+    <MESSAGE value="git add png" />
+    <option name="LAST_COMMIT_MESSAGE" value="git add png" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

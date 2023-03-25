@@ -1,9 +1,13 @@
 package objectClass;
+import java.awt.Graphics;
 
 public class UseCaseClass extends BasicClass {
 
+    public UseCaseClass(int x1, int y1){
+//
+    }
     @Override
-    public void draw() {
+    public void draw(Graphics g) {
 
     }
 

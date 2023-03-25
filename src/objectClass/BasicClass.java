@@ -5,12 +5,16 @@
 
 package objectClass;
 
+import java.awt.*;
+
 public class BasicClass extends ObjectClass {
     public BasicClass() {
     }
 
-    public void draw() {
+    public void draw(Graphics g) {
+
     }
+
 
     public void rename() {
     }

@@ -1,10 +1,12 @@
 package objectClass;
 
+import java.awt.*;
+
 public class CompositeClass extends ObjectClass{
 
     ObjectClass selectedObj = null;
     @Override
-    public void draw() {
+    public void draw(Graphics g) {
 
     }
 

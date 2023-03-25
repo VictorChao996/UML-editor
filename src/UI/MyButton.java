@@ -1,5 +1,6 @@
 package UI;
 
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.net.URL;
@@ -20,11 +21,15 @@ public class MyButton extends JButton implements MouseListener {
         this.addActionListener((e) -> {
             this.buttonType = btnType;
         });
+
         this.setText(text);
+        this.setFont(new Font("Monospace", Font.BOLD, 15));
+        this.setForeground(Color.white);
         this.setHorizontalTextPosition(0);
         this.setVerticalTextPosition(3);
         this.setFocusable(false);
         this.addMouseListener(this);
+        this.setBackground(Color.darkGray);
     }
 
 
@@ -33,7 +38,8 @@ public class MyButton extends JButton implements MouseListener {
     }
 
     public void mousePressed(MouseEvent e) {
-        this.setEnabled(false);
+//        this.setEnabled(false);
+//        this.setBackground(Color.lightGray);
     }
 
     public void mouseReleased(MouseEvent e) {
@@ -43,5 +49,8 @@ public class MyButton extends JButton implements MouseListener {
     }
 
     public void mouseExited(MouseEvent e) {
+    }
+
+    public void addMouseListener() {
     }
 }

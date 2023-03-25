@@ -5,11 +5,13 @@
 
 package objectClass;
 
+import java.awt.*;
+
 public class LineClass extends ObjectClass {
     public LineClass() {
     }
 
-    public void draw() {
+    public void draw(Graphics g) {
         System.out.println("Line Draw");
     }
 

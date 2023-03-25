@@ -3,8 +3,7 @@ package UI;//
 // (powered by FernFlower decompiler)
 //
 
-import java.awt.Color;
-import java.awt.Dimension;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.PrintStream;
@@ -34,6 +33,7 @@ public class MyCustomPanel extends JPanel implements MouseListener {
     }
 
     public void mousePressed(MouseEvent e) {
+
     }
 
     public void mouseReleased(MouseEvent e) {
@@ -44,4 +44,6 @@ public class MyCustomPanel extends JPanel implements MouseListener {
 
     public void mouseExited(MouseEvent e) {
     }
+
+
 }
