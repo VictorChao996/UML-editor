@@ -20,4 +20,8 @@ public class LineClass extends ObjectClass {
 
     public void inside(int px, int py) {
     }
+
+    public void move(){
+        
+    }
 }

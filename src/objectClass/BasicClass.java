@@ -9,28 +9,58 @@ import java.awt.*;
 
 public class BasicClass extends ObjectClass {
 
-    PortClass[] port_arr = new PortClass[4];
-    private int width = 0;
-    private int height = 0;
+    PortClass[] ports = new PortClass[4];
+    private int x;
+    private int y;
+    protected int width = 0;
+    protected int height = 0;
+    protected boolean isSelected = false;
+    protected String text = "obj" ;
 
-
-
-    public BasicClass() {
-        create_port();
-    }
-
+    //draw ports 
     public void draw(Graphics g) {
-
-    }
+		for(int i = 0; i < ports.length; i++) {
+			g.fillRect(ports[i].x, ports[i].y, ports[i].width, ports[i].height);
+		}
+	}
 
 
     public void rename() {
     }
 
+    @Override
     public void inside(int px, int py) {
+        System.out.println("width: " + width + " " +"height: "+ height);
+        if(px >= x && px <= x+width && py >= y && py <= y+height){
+            System.out.println(this);
+            System.out.println("inside");
+            isSelected = true;
+        }else{
+            System.out.println("outside");
+            isSelected = false;
+        }
     }
 
-    private void create_port() {
-        
+    public void create_ports(int x, int y, int width, int height) {
+        System.out.println("create ports");
+        ports[0] = new PortClass(x + width / 2, y);
+        ports[1] = new PortClass(x + width, y + height / 2);
+        ports[2] = new PortClass(x + width / 2, y + height);
+        ports[3] = new PortClass(x, y + height / 2);
+    }
+
+    public void setXY(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+    public void setWidth(int width){
+        this.width = width;
+    }
+    public void setHeight(int height){
+        this.height = height;
+    }
+
+    public void rename(String text){
+        this.text = text;
     }
 }
