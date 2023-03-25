@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb4d2959-a5ae-49de-b67e-c0d4e9c42573" name="Changes" comment="git add png">
-      <change afterPath="$PROJECT_DIR$/src/UI/CanvasPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UI/CanvasPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/CanvasPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/MyButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/MyButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UI/MyCustomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/MyCustomPanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UI/MyFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UI/MyFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectClass/AssociationLineClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/AssociationLineClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectClass/BasicClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/BasicClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/objectClass/Class.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/Class.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectClass/CompositeClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/CompositeClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectClass/LineClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/LineClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/objectClass/ObjectClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/ObjectClass.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/objectClass/UseCaseClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/objectClass/UseCaseClass.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

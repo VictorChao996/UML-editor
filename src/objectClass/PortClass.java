@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 public class PortClass {
     ArrayList<LineClass> line_arr = new ArrayList();
+    private int x;
+    private int y;
+    
     public void display(){
 
     }

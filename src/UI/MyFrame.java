@@ -4,9 +4,7 @@ package UI;//
 //
 
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -15,11 +13,17 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 
 public class MyFrame extends JFrame implements MouseListener {
+    private int mode = 0 ;
     private ButtonType buttonType;
     public static ArrayList<MyButton> buttons = new ArrayList<>();
 
+    JPanel buttonPanel = this.setUpButtonPanel();
+    //        MyCustomPanel canvasPanel = new MyCustomPanel(Color.darkGray, 1200, 700, "canvasPanel");
+    CanvasPanel canvasPanel = new CanvasPanel(Color.darkGray, 1200, 700);
+    MyCustomPanel topPanel = new MyCustomPanel(150, 10, "topPanel");
+    MyCustomPanel bottomPanel = new MyCustomPanel(150, 10, "bottomPanel");
+
     public void mouseClicked(MouseEvent e) {
-        System.out.println("Hello World");
     }
 
     public void mousePressed(MouseEvent e) {
@@ -36,11 +40,7 @@ public class MyFrame extends JFrame implements MouseListener {
 
     //! set up the whole frame
     public MyFrame() {
-        JPanel buttonPanel = this.setUpButtonPanel();
-//        MyCustomPanel canvasPanel = new MyCustomPanel(Color.darkGray, 1200, 700, "canvasPanel");
-        CanvasPanel canvasPanel = new CanvasPanel(Color.darkGray, 1200, 700);
-        MyCustomPanel topPanel = new MyCustomPanel(150, 10, "topPanel");
-        MyCustomPanel bottomPanel = new MyCustomPanel(150, 10, "bottomPanel");
+
         this.setDefaultCloseOperation(3);
         this.setTitle("UML Editor");
         this.setLayout(new BorderLayout(10, 20));
@@ -62,9 +62,17 @@ public class MyFrame extends JFrame implements MouseListener {
         JMenuItem groupItem = new JMenuItem("Group");
         JMenuItem ungroupItem = new JMenuItem("Ungroup");
         JMenuItem changeNameItem = new JMenuItem("Change objectClass.Object Name");
+        JMenuItem clearItem = new JMenuItem("clear");
+        clearItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                canvasPanel.clearObj();
+            }
+        });
         editMenu.add(groupItem);
         editMenu.add(ungroupItem);
         editMenu.add(changeNameItem);
+        editMenu.add(clearItem);
         menuBar.add(fileMenu);
         menuBar.add(editMenu);
         return menuBar;
@@ -90,16 +98,9 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         selectBtn.setBackground(Color.lightGray);
-                    }
-                }
-        );
-        assocButton.addMouseListener(
-                new MouseAdapter() {
-                    @Override
-                    public void mousePressed(MouseEvent e) {
-//                        super.mousePressed(e);
-                        updateButtonPanel();
-                        assocButton.setBackground(Color.lightGray);
+                        mode = 1;
+//                        System.out.println("current mode: 1");
+                        canvasPanel.setMode(1);
                     }
                 }
         );
@@ -110,6 +111,9 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         generBtn.setBackground(Color.lightGray);
+                        mode = 3;
+//                        System.out.println("current mode: 2");
+                        canvasPanel.setMode(2);
                     }
                 }
         );
@@ -120,6 +124,22 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         compoBtn.setBackground(Color.lightGray);
+                        mode = 4;
+//                        System.out.println("current mode: 3");
+                        canvasPanel.setMode(3);
+                    }
+                }
+        );
+        assocButton.addMouseListener(
+                new MouseAdapter() {
+                    @Override
+                    public void mousePressed(MouseEvent e) {
+//                        super.mousePressed(e);
+                        updateButtonPanel();
+                        assocButton.setBackground(Color.lightGray);
+                        mode = 2;
+//                        System.out.println("current mode: 4");
+                        canvasPanel.setMode(4);
                     }
                 }
         );
@@ -130,6 +150,9 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         classBtn.setBackground(Color.lightGray);
+                        mode = 5;
+//                        System.out.println("current mode: 5");
+                        canvasPanel.setMode(5);
                     }
                 }
         );
@@ -140,6 +163,9 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         useCaseBtn.setBackground(Color.lightGray);
+                        mode = 6;
+//                        System.out.println("current mode: 6");
+                        canvasPanel.setMode(6);
                     }
                 }
         );

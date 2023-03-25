@@ -34,7 +34,7 @@ public class MyButton extends JButton implements MouseListener {
 
 
     public void mouseClicked(MouseEvent e) {
-        System.out.println("");
+    
     }
 
     public void mousePressed(MouseEvent e) {
