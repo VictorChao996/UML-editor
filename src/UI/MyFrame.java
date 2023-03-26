@@ -61,17 +61,24 @@ public class MyFrame extends JFrame implements MouseListener {
         JMenu editMenu = new JMenu("Edit");
         JMenuItem groupItem = new JMenuItem("Group");
         JMenuItem ungroupItem = new JMenuItem("Ungroup");
-        JMenuItem changeNameItem = new JMenuItem("Change objectClass.Object Name");
+        JMenuItem renameItem = new JMenuItem("Change Object Name");
         JMenuItem clearItem = new JMenuItem("clear");
         clearItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                canvasPanel.clearObj();
+                canvasPanel.clearObjs();
             }
         });
+        renameItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                canvasPanel.renameObj();
+            }
+        });
+        
         editMenu.add(groupItem);
         editMenu.add(ungroupItem);
-        editMenu.add(changeNameItem);
+        editMenu.add(renameItem);
         editMenu.add(clearItem);
         menuBar.add(fileMenu);
         menuBar.add(editMenu);

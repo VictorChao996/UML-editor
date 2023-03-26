@@ -14,7 +14,7 @@ public class BasicClass extends ObjectClass {
     private int y;
     protected int width = 0;
     protected int height = 0;
-    protected boolean isSelected = false;
+    // protected boolean isSelected = false;
     protected String text = "obj" ;
 
     //draw ports 
@@ -25,8 +25,6 @@ public class BasicClass extends ObjectClass {
 	}
 
 
-    public void rename() {
-    }
 
     @Override
     public void inside(int px, int py) {
@@ -60,6 +58,7 @@ public class BasicClass extends ObjectClass {
         this.height = height;
     }
 
+    @Override
     public void rename(String text){
         this.text = text;
     }

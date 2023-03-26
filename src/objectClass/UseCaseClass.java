@@ -29,10 +29,6 @@ public class UseCaseClass extends BasicClass {
         g2D.drawString(text, x + 35, y + 50);
     }
 
-    @Override
-    public void rename() {
-
-    }
 
 //    @Override
 //    public boolean inside(int px, int py, int x, int y, int width, int height, boolean isSelected) {

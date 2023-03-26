@@ -15,7 +15,7 @@ public class LineClass extends ObjectClass {
         System.out.println("Line Draw");
     }
 
-    public void rename() {
+    public void rename(String text) {
     }
 
     public void inside(int px, int py) {

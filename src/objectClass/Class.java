@@ -14,6 +14,9 @@ public class Class extends BasicClass {
         this.text = text;
         System.out.println("new Class obj");
         create_ports(x,y,width,height);
+        setXY(x,y);
+        setHeight(height);
+        setWidth(width);
     }
     @Override
     public void draw(Graphics g) {
@@ -28,10 +31,7 @@ public class Class extends BasicClass {
         g2D.drawString(text, x + 35, y + 50);
     }
 
-    @Override
-    public void rename() {
-
-    }
+   
 
     // @Override
     // public void inside(int px, int py) {

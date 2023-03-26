@@ -11,8 +11,8 @@ public class CompositeClass extends ObjectClass{
     }
 
     @Override
-    public void rename() {
-        selectedObj.rename();
+    public void rename(String text) {
+        selectedObj.rename(text);
     }
 
     @Override
