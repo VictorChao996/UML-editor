@@ -6,11 +6,7 @@ package UI;//
 import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
-import javax.swing.JFrame;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public class MyFrame extends JFrame implements MouseListener {
     private int mode = 0 ;
@@ -72,7 +68,11 @@ public class MyFrame extends JFrame implements MouseListener {
         renameItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                canvasPanel.renameObj();
+                String newName = JOptionPane.showInputDialog("Rename the object", "Enter new name:");
+                if(newName != null){
+                    canvasPanel.renameObj(newName);
+                }
+
             }
         });
         

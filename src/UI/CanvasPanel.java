@@ -56,11 +56,11 @@ public class CanvasPanel extends JPanel implements MouseListener {
     /**
      * * rename the selected object
      */
-    public void renameObj(){
+    public void renameObj(String newName){
         for(int i=0; i<Objs.size(); i++){
             ObjectClass obj = Objs.get(i);
             if(obj.isSelected){
-                obj.rename("rename");
+                obj.rename(newName);
             }
         }
         repaint();
