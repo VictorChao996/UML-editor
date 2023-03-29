@@ -111,6 +111,7 @@ public class CanvasPanel extends JPanel implements MouseListener, MouseMotionLis
                 firstPortToConnect = obj.getPort(x,y);
             }
         }
+        countSelectedObjs();
         switch(mode){
             case 1:
                 boolean isOnObject = checkInside(x,y);
@@ -332,6 +333,7 @@ public class CanvasPanel extends JPanel implements MouseListener, MouseMotionLis
             CompositeClass compositeObj = new CompositeClass(selectedObjs);
             Objs.add(compositeObj);
         }
+        Objs.remove(currentDrawObj);
     }
 
     public void countSelectedObjs(){

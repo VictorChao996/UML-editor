@@ -44,7 +44,7 @@ public class BasicClass extends ObjectClass {
 
     @Override
     public void inside(int px, int py) {
-        System.out.println("width: " + width + " " +"height: "+ height);
+        // System.out.println("width: " + width + " " +"height: "+ height);
         if(px >= x && px <= x+width && py >= y && py <= y+height){
             System.out.println(this);
             System.out.println("inside");
