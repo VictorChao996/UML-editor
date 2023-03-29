@@ -68,9 +68,20 @@ public class MyFrame extends JFrame implements MouseListener {
         renameItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String newName = JOptionPane.showInputDialog("Rename the object", "Enter new name:");
-                if(newName != null){
-                    canvasPanel.renameObj(newName);
+                String input = JOptionPane.showInputDialog("Rename the object", "Enter new name:");
+                // if(newName != null){
+                //     canvasPanel.renameObj(newName);
+                // }
+
+                if (input != null && !input.isEmpty()) {
+                    if (input.length() > 18) {
+                        JOptionPane.showMessageDialog(null, "Text is too long!", "Error", JOptionPane.ERROR_MESSAGE);
+                    } else {
+                        // JOptionPane.showMessageDialog(this, "Text is valid.");
+                        canvasPanel.renameObj(input);
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "No text entered.", "Error", JOptionPane.ERROR_MESSAGE);
                 }
 
             }

@@ -4,10 +4,8 @@ package objectClass;
 import java.awt.*;
 
 public abstract class ObjectClass {
-    protected int x1;
-    protected int y1;
-    protected int x2;
-    protected int y2;
+    protected int x;
+    protected int y;
     public boolean isSelected = false;
 
     public ObjectClass() {
@@ -18,19 +16,20 @@ public abstract class ObjectClass {
     public abstract void rename(String text);
 
     public abstract void inside(int px, int py);
-    public int getX1() {
-        return x1;
+    public int getX() {
+        return x;
     }
 
-    public int getY1() {
-        return y1;
+    public int getY() {
+        return y;
     }
 
-    public int getX2() {
-        return x2;
+    public void setX(int x) {
+        this.x = x;
     }
 
-    public int getY2() {
-        return y2;
+    public void setY(int y) {
+        this.y = y;
     }
+
 }

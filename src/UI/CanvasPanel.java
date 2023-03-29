@@ -8,18 +8,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 
-public class CanvasPanel extends JPanel implements MouseListener {
+public class CanvasPanel extends JPanel implements MouseListener, MouseMotionListener {
 
     //! 所有創立的obj記錄到一個陣列中 (用於重新繪製)
     private ArrayList<ObjectClass> Objs = new ArrayList<>();
     private int mode = 0;
+    private boolean dragMode = false;
 
     CanvasPanel(Color bgColor, int width, int height) {
         this.setBackground(bgColor);
         this.setPreferredSize(new Dimension(width, height));
         this.addMouseListener(this);
+        this.addMouseMotionListener(this);
     }
 
     /**
@@ -69,12 +72,20 @@ public class CanvasPanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
+        for(int i = Objs.size()-1 ;i>=0; i--){
+            ObjectClass obj = Objs.get(i);
+            if(obj.isSelected){
+                System.out.println("X: " + obj.getX());
+                System.out.println("Y: " + obj.getY());
+                // dragMode = true;
+            }
+        }
+        System.out.println("Obj length: " + Objs.size());
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
-        System.out.println(e.getX() + " " + e.getY());
+//        System.out.println(e.getX() + " " + e.getY());
         int x = e.getX();
         int y = e.getY();
         switch(mode){
@@ -115,5 +126,29 @@ public class CanvasPanel extends JPanel implements MouseListener {
     @Override
     public void mouseExited(MouseEvent e) {
         // System.out.println("canvas out");
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        if(mode == 1){
+            int x = e.getX();
+            int y = e.getY();
+            System.out.println("drag x: " +  x + ", drag y: " + y);
+            for(int i = Objs.size()-1 ;i>=0; i--){
+                ObjectClass obj = Objs.get(i);
+                if(obj.isSelected){
+                    obj.setX(x);
+                    obj.setY(y);
+                    repaint();
+                }
+
+                    
+            }
+        }
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent e) {
+
     }
 }
