@@ -86,6 +86,12 @@ public class MyFrame extends JFrame implements MouseListener {
 
             }
         });
+        groupItem.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                canvasPanel.groupObjs();
+            }
+        });
         
         editMenu.add(groupItem);
         editMenu.add(ungroupItem);

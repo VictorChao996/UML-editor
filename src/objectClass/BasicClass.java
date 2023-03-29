@@ -8,8 +8,8 @@ public class BasicClass extends ObjectClass {
     PortClass[] ports = new PortClass[4];
     // private int x;
     // private int y;
-    protected int width = 0;
-    protected int height = 0;
+    // protected int width = 0;
+    // protected int height = 0;
     // protected boolean isSelected = false;
     protected String text = "obj" ;
 
