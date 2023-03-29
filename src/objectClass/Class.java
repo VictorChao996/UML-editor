@@ -33,19 +33,4 @@ public class Class extends BasicClass {
         set_ports_pos(x,y,width,height);
     }
 
-
-
-    // @Override
-    // public void inside(int px, int py) {
-    //     if(px >= x && px <= x+width && py >= y && py <= y+height){
-    //         System.out.println(this);
-    //         System.out.println("inside");
-    //         isSelected = true;
-    //     }else{
-    //         System.out.println("outside");
-    //         isSelected = false;
-    //     }
-//    }
-
-
 }

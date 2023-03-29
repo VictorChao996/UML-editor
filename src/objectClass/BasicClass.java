@@ -1,7 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
 
 package objectClass;
 
@@ -39,7 +35,11 @@ public class BasicClass extends ObjectClass {
         ports[1].setXY(x + width, y + height / 2);
         ports[2].setXY(x + width / 2, y + height);
         ports[3].setXY(x, y + height / 2);
-
+        // ports[0].setXY(x + width / 2, y);
+        // ports[1].setXY(x + width, y + height / 2);
+        // ports[2].setXY(x + width / 2, y + height);
+        // ports[3].setXY(x, y + height / 2);
+        
     }
 
     @Override
@@ -77,5 +77,23 @@ public class BasicClass extends ObjectClass {
     @Override
     public void rename(String text){
         this.text = text;
+    }
+
+    /**
+     * * 根據x,y座標找對最接近的的port
+     */
+    @Override
+    public PortClass getPort(int x, int y){
+        int distance = 10000000;
+        int minDisPort = 0 ;
+        for(int i = 0; i < ports.length; i++) {
+            int temp = (int) Math.sqrt(Math.pow(ports[i].x - x, 2) + Math.pow(ports[i].y - y, 2));
+            if(temp <= distance){
+                minDisPort = i;
+                distance = temp;
+            }
+        }
+        System.out.println("return Port: " + minDisPort);
+        return ports[minDisPort];
     }
 }

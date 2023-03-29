@@ -1,8 +1,7 @@
 package UI;
 
+import objectClass.*;
 import objectClass.Class;
-import objectClass.ObjectClass;
-import objectClass.UseCaseClass;
 
 import javax.swing.*;
 import java.awt.*;
@@ -17,6 +16,14 @@ public class CanvasPanel extends JPanel implements MouseListener, MouseMotionLis
     private ArrayList<ObjectClass> Objs = new ArrayList<>();
     private int mode = 0;
     private boolean dragMode = false;
+    private int x1 = 0;
+    private int y1 = 0;
+    private int x2 = 0;
+    private int y2 = 0;
+
+    private PortClass firstPortToConnect = null;
+    private PortClass secondPortToConnect = null;
+    private CompositeClass currentCompositeObj = null;
 
     CanvasPanel(Color bgColor, int width, int height) {
         this.setBackground(bgColor);
@@ -85,21 +92,54 @@ public class CanvasPanel extends JPanel implements MouseListener, MouseMotionLis
 
     @Override
     public void mousePressed(MouseEvent e) {
-//        System.out.println(e.getX() + " " + e.getY());
         int x = e.getX();
         int y = e.getY();
+        x1 = x;
+        y1 = y;
+        firstPortToConnect = null;
+        //*尋找第一個需要連接的port */
+        for(int i = Objs.size()-1 ;i>=0; i--){
+            ObjectClass obj = Objs.get(i);
+            obj.inside(x,y);
+            if(obj.isSelected == true){
+                firstPortToConnect = obj.getPort(x,y);
+            }
+        }
         switch(mode){
             case 1:
-                for(int i = Objs.size()-1 ;i>=0; i--){
-                    ObjectClass obj = Objs.get(i);
-                    obj.inside(x,y);
+                currentCompositeObj = null;
+                if(firstPortToConnect == null){
+                    CompositeClass compositeObj = new CompositeClass(x,y,x,y);
+                    Objs.add(compositeObj);
+                    currentCompositeObj = compositeObj;
                 }
                 break;
             case 2:
+                // for(int i = Objs.size()-1 ;i>=0; i--){
+                //     ObjectClass obj = Objs.get(i);
+                //     obj.inside(x,y);
+                //     if(obj.isSelected == true){
+                //         firstPortToConnect = obj.getPort(x,y);
+                //     }
+                // }
                 break;
             case 3:
+                // for(int i = Objs.size()-1 ;i>=0; i--){
+                //     ObjectClass obj = Objs.get(i);
+                //     obj.inside(x,y);
+                //     if(obj.isSelected == true){
+                //         firstPortToConnect = obj.getPort(x,y);
+                //     }
+                // }
                 break;
             case 4:
+                // for(int i = Objs.size()-1 ;i>=0; i--){
+                //     ObjectClass obj = Objs.get(i);
+                //     obj.inside(x,y);
+                //     if(obj.isSelected == true){
+                //         firstPortToConnect = obj.getPort(x,y);
+                //     }
+                // }
                 break;
             case 5:
                 Class classObj = new Class(x,y, "class");
@@ -115,7 +155,35 @@ public class CanvasPanel extends JPanel implements MouseListener, MouseMotionLis
 
     @Override
     public void mouseReleased(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+        x2 = x;
+        y2 = y;
+        secondPortToConnect = null;
+        //*尋找第二個需要連接的port
+        for(int i = Objs.size()-1 ;i>=0; i--){
+            ObjectClass obj = Objs.get(i);
+            obj.inside(x,y);
+            if(obj.isSelected == true){
+                secondPortToConnect = obj.getPort(x,y);
+            }
+        }
+        switch(mode){
+            case 2:
+                GeneralizationLineClass glObj = new GeneralizationLineClass(firstPortToConnect,secondPortToConnect);
+                Objs.add(glObj);
+                break;
+            case 3:
+                CompositionLineClass clObj = new CompositionLineClass(firstPortToConnect, secondPortToConnect);
+                Objs.add(clObj);
+                break;
+            case 4:
+                AssociationLineClass alObj = new AssociationLineClass(firstPortToConnect, secondPortToConnect);
+                Objs.add(alObj);
+                break;
 
+        }
+        repaint();
     }
 
     @Override
@@ -133,22 +201,55 @@ public class CanvasPanel extends JPanel implements MouseListener, MouseMotionLis
         if(mode == 1){
             int x = e.getX();
             int y = e.getY();
-            System.out.println("drag x: " +  x + ", drag y: " + y);
-            for(int i = Objs.size()-1 ;i>=0; i--){
-                ObjectClass obj = Objs.get(i);
-                if(obj.isSelected){
-                    obj.setX(x);
-                    obj.setY(y);
-                    repaint();
+            x2 = x;
+            y2 = y;
+//            System.out.println("drag x: " +  x + ", drag y: " + y);
+            boolean isOnObject = checkInside(x,y);
+            if(isOnObject) {
+                for(int i = Objs.size()-1 ;i>=0; i--){
+                    ObjectClass obj = Objs.get(i);
+                    obj.inside(x,y);
+                    if(obj.isSelected){
+                        obj.setX(x);
+                        obj.setY(y);
+                        repaint();
+                    }
                 }
-
-                    
+            }else{
+                currentCompositeObj.setX2(x);
+                currentCompositeObj.setY2(y);
             }
+            
+            // ObjectClass selectedObject = null;
+            // for(int i = Objs.size()-1 ;i>=0; i--){
+            //     ObjectClass obj = Objs.get(i);
+            //     if(obj.isSelected){
+            //         selectedObject = obj;
+            //         obj.setX(x);
+            //         obj.setY(y);
+            //         repaint();
+            //     }
+            //     else{
+            //         selectedObject = null;
+            //     }
+            // }
         }
+        repaint();
     }
 
     @Override
     public void mouseMoved(MouseEvent e) {
 
+    }
+
+    public boolean checkInside(int x, int y){
+        for(int i = Objs.size()-1 ;i>=0; i--){
+            ObjectClass obj = Objs.get(i);
+            obj.inside(x,y);
+            if(obj.isSelected){
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -32,4 +32,9 @@ public abstract class ObjectClass {
         this.y = y;
     }
 
+    //method to override by basicObject Class
+    public PortClass getPort(int x, int y){
+        return null;
+    }
+
 }
