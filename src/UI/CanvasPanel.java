@@ -193,30 +193,37 @@ public class CanvasPanel extends JPanel implements MouseListener, MouseMotionLis
                         secondPortToConnect = obj.getPort(x,y);
                     }
                 }
+                // System.out.println("SecondPortToConnect:" + secondPortToConnect);
+                if(firstPortToConnect == null || secondPortToConnect == null)
+                    break;
                 GeneralizationLineClass glObj = new GeneralizationLineClass(firstPortToConnect,secondPortToConnect);
                 Objs.add(glObj);
                 break;
             case 3:
                   //*尋找第二個需要連接的port
-                  for(int i = Objs.size()-1 ;i>=0; i--){
+                for(int i = Objs.size()-1 ;i>=0; i--){
                     ObjectClass obj = Objs.get(i);
                     obj.inside(x,y);
                     if(obj.isSelected == true){
                         secondPortToConnect = obj.getPort(x,y);
                     }
                 }
+                if(firstPortToConnect == null || secondPortToConnect == null)
+                    break;
                 CompositionLineClass clObj = new CompositionLineClass(firstPortToConnect, secondPortToConnect);
                 Objs.add(clObj);
                 break;
             case 4:
                   //*尋找第二個需要連接的port
-                  for(int i = Objs.size()-1 ;i>=0; i--){
+                for(int i = Objs.size()-1 ;i>=0; i--){
                     ObjectClass obj = Objs.get(i);
                     obj.inside(x,y);
                     if(obj.isSelected == true){
                         secondPortToConnect = obj.getPort(x,y);
                     }
                 }
+                if(firstPortToConnect == null || secondPortToConnect == null)
+                    break;
                 AssociationLineClass alObj = new AssociationLineClass(firstPortToConnect, secondPortToConnect);
                 Objs.add(alObj);
                 break;

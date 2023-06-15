@@ -122,8 +122,6 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         selectBtn.setBackground(Color.lightGray);
-                        mode = 1;
-//                        System.out.println("current mode: 1");
                         canvasPanel.setMode(1);
                     }
                 }
@@ -135,8 +133,6 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         generBtn.setBackground(Color.lightGray);
-                        mode = 3;
-//                        System.out.println("current mode: 2");
                         canvasPanel.setMode(2);
                     }
                 }
@@ -148,8 +144,6 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         compoBtn.setBackground(Color.lightGray);
-                        mode = 4;
-//                        System.out.println("current mode: 3");
                         canvasPanel.setMode(3);
                     }
                 }
@@ -161,8 +155,6 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         assocButton.setBackground(Color.lightGray);
-                        mode = 2;
-//                        System.out.println("current mode: 4");
                         canvasPanel.setMode(4);
                     }
                 }
@@ -174,8 +166,6 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         classBtn.setBackground(Color.lightGray);
-                        mode = 5;
-//                        System.out.println("current mode: 5");
                         canvasPanel.setMode(5);
                     }
                 }
@@ -187,8 +177,6 @@ public class MyFrame extends JFrame implements MouseListener {
 //                        super.mousePressed(e);
                         updateButtonPanel();
                         useCaseBtn.setBackground(Color.lightGray);
-                        mode = 6;
-//                        System.out.println("current mode: 6");
                         canvasPanel.setMode(6);
                     }
                 }
